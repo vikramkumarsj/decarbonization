@@ -209,47 +209,12 @@ def remove_stop_words(df):
 # In[12]:
 
 df = pd.DataFrame(columns=['alltext'])   
+contents  = "ML as a powerful emerging tool for carbon capture applications as well. ML methods have enabled researchers to design, test, and improve various aspects of the process that are computationally (using theoretical calculations) or experimentally time consuming and expensive. The use of ML for carbon capture processes is still emerging, and most investigations have been conducted only in the past few years. The primary goal in implementation of ML for carbon capture is to design and execute process schemes to effectively separate CO2 from a gas mixture (e.g., CO2/N2/O2) with a minimum energy penalty and cost. ML methods have been implemented successfully in both absorption- and adsorption-based processes, at the molecular and the process level, to overcome challenges that these approaches are currently facing. In this perspective, we discuss how ML has been adapted to predict the thermodynamic properties of CO2-absorbent chemistry, such as the solubility, to facilitate the discovery of alternative absorbents"
 
-uploaded_file = st.file_uploader("Upload Files")
-if uploaded_file is not None:
-    file_details = {"FileName":uploaded_file.name,"FileType":uploaded_file.type,"FileSize":uploaded_file.size}
-    st.write(file_details) 
-    rootdir = "/app/decarbonization/Data/Full_Text/Document" 
-    with open(os.path.join(rootdir,uploaded_file.name),'w') as f:
-        f.write(uploaded_file.getbuffer())
-        st.success("File_saved")
-        
-#filename = st.text_input('Enter a file root path:')
-#rootdirforfilenames = filename
-   
-# # Read Data 
-
-        for subdir, dirs, files in os.walk(rootdir):
-            for file in files:
-                filepath = subdir + os.sep + file
-                st.write(filepath)
-        if filepath.endswith(".PDF")or filepath.endswith(".pdf"):
-            PDF_PATH = filepath.replace('\\','\\')
-            print (PDF_PATH)
-            start_time = time.time()
-            contents = Process_pdf(PDF_PATH)
-            df = df.append({'alltext': contents}, ignore_index=True)
-            print ("Time taken : " + str(time.time() - start_time))
-        elif filepath.endswith(".docx") or filepath.endswith(".DOCX") or filepath.endswith(".doc"):
-            DOC_PATH = filepath.replace('\\','\\')
-            print (DOC_PATH)
-            start_time = time.time()
-            contents = Process_Doc(DOC_PATH)
-            df = df.append({'alltext': contents}, ignore_index=True)
-            print ("Time taken : " + str(time.time() - start_time))
-
-#df.head()   
+df = df.append({'alltext': contents}, ignore_index=True)
+st.write( ("Time taken : " + str(time.time() - start_time))
 
 # # Data Cleansing
-
-#df['alltext'] = df['alltext'].apply(lambda x: clean_it(x))
-#df = pd.DataFrame(df['alltext'].str.lower(),columns = ['alltext'])
-df.head(2)
 
 
 # In[17]:
