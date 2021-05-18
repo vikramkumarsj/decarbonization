@@ -53,6 +53,26 @@ st.write(df)
 
 
 
+# # Apply the model on cleansed data
+
+# In[19]:
+#nlp = spacy.load('C:\\Users\\Vikram.V.Kumar\\Desktop\\\Work\\Projects\\GLIMP\\code\\model\myNlp_ensemble')
+
+from spacy_streamlit import visualize_textcat
+from spacy_streamlit import visualize_tokens
+from spacy_streamlit import load_model
+
+
+entity_list = pd.DataFrame()
+spacy_model = st.sidebar.selectbox("Select NLP Model to be Applied", ["Custom NER", "Custom Text Categorizer", "OOTB NER" ])
+
+if spacy_model == "Custom NER":
+        nlp = spacy.load('/app/decarbonization/Model/Decarbon_NER_Model_OOTB')
+        st.write("Model Imported")
+
+else:
+    st.write("No Model")
+
 
    
 
