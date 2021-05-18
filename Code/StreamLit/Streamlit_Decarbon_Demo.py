@@ -65,10 +65,8 @@ from spacy_streamlit import load_model
 entity_list = pd.DataFrame()
 spacy_model = st.sidebar.selectbox("Select NLP Model to be Applied", ["Custom NER", "Custom Text Categorizer", "OOTB NER" ])
 
-if spacy_model == "Custom NER":
-        
+if spacy_model == "Custom NER":        
 #        nlp = load_model("en_core_web_lg")
-        nlp.vocab.vectors = spacy.vocab.Vectors(data=med_vec.syn0, keys=med_vec.vocab.keys())
         nlp = spacy.load("/app/decarbonization/Model/Decarbon_NER_Model_OOTB")
         st.write("Model Imported")
 
