@@ -215,7 +215,7 @@ if uploaded_file is not None:
     file_details = {"FileName":uploaded_file.name,"FileType":uploaded_file.type,"FileSize":uploaded_file.size}
     st.write(file_details) 
     rootdir = "/app/decarbonization/Data/Full_Text/Document" 
-    with open(os.path.join(rootdir,uploaded_file.name),'wb') as f:
+    with open(os.path.join(rootdir,uploaded_file.name),'w') as f:
         f.write(uploaded_file.getbuffer())
         st.success("File_saved")
         
