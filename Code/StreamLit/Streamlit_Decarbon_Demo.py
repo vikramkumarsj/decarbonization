@@ -62,14 +62,13 @@ from spacy_streamlit import visualize_textcat
 from spacy_streamlit import visualize_tokens
 from spacy_streamlit import load_model
 
-
 entity_list = pd.DataFrame()
 spacy_model = st.sidebar.selectbox("Select NLP Model to be Applied", ["Custom NER", "Custom Text Categorizer", "OOTB NER" ])
 
 if spacy_model == "Custom NER":
-        spacy_model = "/app/decarbonization/Model/Decarbon_NER_Model_OOTB"
-        doc = spacy_streamlit.process_text(spacy_model, contents)
-        nlp = spacy.load(spacy_model)
+        
+        nlp = load_model("/app/decarbonization/Model/Decarbon_NER_Model_OOTB")
+#        nlp = spacy.load("/app/decarbonization/Model/Decarbon_NER_Model_OOTB")
         st.write("Model Imported")
 
 
