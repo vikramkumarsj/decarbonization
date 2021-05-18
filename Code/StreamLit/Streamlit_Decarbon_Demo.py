@@ -210,9 +210,9 @@ def remove_stop_words(df):
 
 df = pd.DataFrame(columns=['alltext'])   
 contents  = "ML as a powerful emerging tool for carbon capture applications as well. ML methods have enabled researchers to design, test, and improve various aspects of the process that are computationally (using theoretical calculations) or experimentally time consuming and expensive. The use of ML for carbon capture processes is still emerging, and most investigations have been conducted only in the past few years. The primary goal in implementation of ML for carbon capture is to design and execute process schemes to effectively separate CO2 from a gas mixture (e.g., CO2/N2/O2) with a minimum energy penalty and cost. ML methods have been implemented successfully in both absorption- and adsorption-based processes, at the molecular and the process level, to overcome challenges that these approaches are currently facing. In this perspective, we discuss how ML has been adapted to predict the thermodynamic properties of CO2-absorbent chemistry, such as the solubility, to facilitate the discovery of alternative absorbents"
+contents = contents.lower()
 
 df = df.append({'alltext': contents}, ignore_index=True)
-st.write( ("Time taken : " + str(time.time() - start_time))
 
 final_data = pd.DataFrame([])
 for x in range(0,8):
