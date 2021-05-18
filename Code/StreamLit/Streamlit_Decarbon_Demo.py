@@ -67,8 +67,8 @@ spacy_model = st.sidebar.selectbox("Select NLP Model to be Applied", ["Custom NE
 
 if spacy_model == "Custom NER":
         
-        nlp = load_model("en_core_web_lg")
-#        nlp = spacy.load("/app/decarbonization/Model/Decarbon_NER_Model_OOTB")
+#        nlp = load_model("en_core_web_lg")
+        nlp = spacy.load("/app/decarbonization/Model/Decarbon_NER_Model_OOTB")
         st.write("Model Imported")
 
 
