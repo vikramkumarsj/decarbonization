@@ -66,7 +66,7 @@ def save_images(pil_images):
     index = 1
     for image in pil_images:
 #        image.save("page_" + str(index) + ".jpg")
-        image.save('/app/decarbonization/Data/Images/'+"page_" + str(index) + ".jpg")
+        image.save('/app/decarbonization/Data/Full_Text/Images/'+"page_" + str(index) + ".jpg")
         index += 1
 
 
