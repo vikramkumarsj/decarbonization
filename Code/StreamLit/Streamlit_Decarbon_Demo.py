@@ -214,12 +214,6 @@ contents  = "ML as a powerful emerging tool for carbon capture applications as w
 df = df.append({'alltext': contents}, ignore_index=True)
 st.write( ("Time taken : " + str(time.time() - start_time))
 
-# # Data Cleansing
-
-
-# In[17]:
-
-
 final_data = pd.DataFrame([])
 for x in range(0,8):
     start = (x)*100000
