@@ -56,7 +56,8 @@ st.write(df)
 # # Apply the model on cleansed data
 
 # In[19]:
-#nlp = spacy.load('C:\\Users\\Vikram.V.Kumar\\Desktop\\\Work\\Projects\\GLIMP\\code\\model\myNlp_ensemble')
+nlp = spacy.load('/app/decarbonization/Model/Decarbon_NER_Model_OOTB/')
+
 
 
 
