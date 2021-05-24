@@ -56,7 +56,7 @@ st.write(df)
 # # Apply the model on cleansed data
 
 from spacy_streamlit import load_model
-spacy_model = ['/app/decarbonization/Model/Decarbon_NER_Model_OOTB']
+spacy_model = '/app/decarbonization/Model/Decarbon_NER_Model_OOTB/'
 nlp = load_model(spacy_model)
 
 # In[19]:
