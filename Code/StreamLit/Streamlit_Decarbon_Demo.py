@@ -57,7 +57,7 @@ st.write(df)
 
 from spacy_streamlit import load_model
 #spacy_model = '/app/decarbonization/Model/Decarbon_NER_Model_OOTB'
-spacy_model = 'C:\Users\Vikram.V.Kumar\Desktop\Work\RnD\Decarbonization\model\Decarbon_NER_Model_OOTB'
+spacy_model = 'C:\\Users\\Vikram.V.Kumar\\Desktop\\Work\\RnD\\Decarbonization\\model\\Decarbon_NER_Model_OOTB'
 nlp = load_model(spacy_model)
 
 # In[19]:
